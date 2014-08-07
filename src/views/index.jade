@@ -1,0 +1,27 @@
+extends ./base.jade
+
+block content
+  .container
+    .row
+      .col-md-4
+        .modal
+          .modal-dialog
+            .modal-content
+              .modal-header
+                h4 Easy Jenkins Jobs
+              .form#main-form.form
+                .modal-body
+                  .form-group.form-group-lg#template-job-prefix
+                    label.control-label(for='template-job-prefix-input')
+                      | Template job Prefix:
+                    input#template-job-prefix-input.form-control.input-lg(type='text', placeholder='ejj_template')
+                  .form-group.form-group-lg#new-job-prefix
+                    label.control-label(for='new-job-prefix-input')
+                      | Template job Prefix:
+                    input#new-job-prefix-input.form-control.input-lg(type='text', placeholder='new-job')
+                  .form-group.form-group-lg#base-jenkins-url
+                    label.control-label(for='base-jenkins-url-input')
+                      | Template job Prefix:
+                    input#base-jenkins-url-input.form-control.input-lg(type='text', placeholder='http://some-jenkins-server.com:8080/')
+                .modal-footer
+                  button.btn.btn-primary.btn-lg.btn-block.btn-middle(type='button') Make my jobs!

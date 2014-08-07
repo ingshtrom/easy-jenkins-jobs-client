@@ -1,18 +1,18 @@
 html(ng-app='fancy-tests')
   head
-    title Fancy Tests - Test Result Visualizer
-    link(rel='shortcut icon', href='/favicon.ico')
+    title EJJ - Client
+    //- link(rel='shortcut icon', href='/favicon.ico')
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='../stylesheets/bootstrap-theme.css')
-    link(rel='stylesheet', href='../stylesheets/bootstrap.css')
-    link(rel='stylesheet', href='../stylesheets/main.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/css/main.css')
     block head
   body
     block content
     //- external libraries
-    script(type='text/javascript', src='../scripts/bower.js')
+    script(type='text/javascript', src='/js/bower.js')
     //- custom scripts
-    script(type='text/javascript', src='../scripts/main.js')
-    script(type='text/javascript', src='../scripts/classes.js')
-    //- script(type='text/javascript', src='../scripts/services.js')
-    script(type='text/javascript', src='../scripts/controllers.js')
+    script(type='text/javascript', src='/js/main.js')
+    //- script(type='text/javascript', src='/js/classes.js')
+    //- script(type='text/javascript', src='/js/services.js')
+    script(type='text/javascript', src='/js/controllers.js')
