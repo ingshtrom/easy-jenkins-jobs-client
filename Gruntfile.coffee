@@ -5,7 +5,7 @@ module.exports = (grunt) ->
   globalConfig =
     src: 'src'
     pub: 'pub/client'
-    
+
   buildDir = 'pub'
   clientBuildDir = path.join(buildDir, 'client')
   imgBuildDir = path.join(clientBuildDir, 'img')
@@ -13,6 +13,7 @@ module.exports = (grunt) ->
   cssBuildDir = path.join(clientBuildDir, 'css')
   viewsBuildDir = path.join(clientBuildDir, 'views')
   mainJsBuildPath = path.join(jsBuildDir, 'main.js')
+  configJsBuildPath = path.join(jsBuildDir, 'config.js')
   classesJsBuildPath = path.join(jsBuildDir, 'classes.js')
   controllersJsBuildPath = path.join(jsBuildDir, 'controllers.js')
   servicesJsBuildPath = path.join(jsBuildDir, 'services.js')

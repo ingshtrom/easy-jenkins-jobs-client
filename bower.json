@@ -6,7 +6,6 @@
     "ingshtrom <alex.hokanson@mysticgear.com>"
   ],
   "description": "Trigger easy-jenkins-jobs",
-  "main": "src/scripts/index.js",
   "keywords": [
     "test",
     "jenkins",
@@ -21,14 +20,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular-bootstrap": "0.11.0",
-    "angular-ui-select2": "0.0.5",
     "bootstrap": "3.2.0",
     "jquery": "2.1.1",
     "lodash": "2.4.1",
     "angular": "1.2.21",
-    "angular-animate": "1.2.21",
-    "angular-route": "1.2.21",
-    "moment": "2.8.1"
+    "bootstrap-growl": "1.1.0"
   }
 }

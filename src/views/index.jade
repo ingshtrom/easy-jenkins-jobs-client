@@ -1,7 +1,7 @@
 extends ./base.jade
 
 block content
-  .container
+  .container(ng-controller='main-controller')
     .row
       .col-md-4
         .modal
@@ -14,14 +14,14 @@ block content
                   .form-group.form-group-lg#template-job-prefix
                     label.control-label(for='template-job-prefix-input')
                       | Template job Prefix:
-                    input#template-job-prefix-input.form-control.input-lg(type='text', placeholder='ejj_template')
+                    input#template-job-prefix-input.form-control.input-lg(type='text', placeholder='ejj_template', ng-model='templateJobPrefix')
                   .form-group.form-group-lg#new-job-prefix
                     label.control-label(for='new-job-prefix-input')
                       | Template job Prefix:
-                    input#new-job-prefix-input.form-control.input-lg(type='text', placeholder='new-job')
+                    input#new-job-prefix-input.form-control.input-lg(type='text', placeholder='new-job', ng-model='newJobPrefix')
                   .form-group.form-group-lg#base-jenkins-url
                     label.control-label(for='base-jenkins-url-input')
                       | Template job Prefix:
-                    input#base-jenkins-url-input.form-control.input-lg(type='text', placeholder='http://some-jenkins-server.com:8080/')
+                    input#base-jenkins-url-input.form-control.input-lg(type='text', placeholder='http://some-jenkins-server.com:8080/', ng-model='baseJenkinsUrl')
                 .modal-footer
-                  button.btn.btn-primary.btn-lg.btn-block.btn-middle(type='button') Make my jobs!
+                  button.btn.btn-primary.btn-lg.btn-block.btn-middle(type='button', ng-click='createJobs()') Make my jobs!
