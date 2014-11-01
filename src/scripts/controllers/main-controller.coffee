@@ -9,10 +9,10 @@ EJJ.controller 'main-controller', [
     $scope.createJobs = () ->
       if _.isEmpty($scope.newJobPrefix)
         $.bootstrapGrowl 'You must specify a new job prefix!', {
-          type: 'error'
+          type: 'danger'
           align: 'center'
           width: 'auto'
-          allow_dismiss: false
+          allow_dismiss: true
         }
         return
 
@@ -25,19 +25,19 @@ EJJ.controller 'main-controller', [
       if !_.isEmpty($scope.jenkinsUrl)
         data.jenkinsUrl = $scope.baseJenkinsUrl
 
-      $http.post('/api/create-jobs', data)
+      $http.post('/api/jobs/create-from-template', data)
         .success (data, status, headers, config) ->
           $.bootstrapGrowl 'Your jobs were created, as request, my Master...', {
             type: 'success'
             align: 'center'
             width: 'auto'
-            allow_dismiss: false
+            allow_dismiss: true
           }
         .error (data, status, headers, config) ->
           $.bootstrapGrowl 'My Master, I could not get your jobs created...I\'m sorry.', {
-            type: 'success'
+            type: 'error'
             align: 'center'
             width: 'auto'
-            allow_dismiss: false
+            allow_dismiss: true
           }
 ]

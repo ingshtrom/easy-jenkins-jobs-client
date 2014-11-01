@@ -8,20 +8,20 @@ block content
           .modal-dialog
             .modal-content
               .modal-header
-                h4 Easy Jenkins Jobs
+                h3 Easy Jenkins Jobs
               .form#main-form.form
                 .modal-body
                   .form-group.form-group-lg#template-job-prefix
                     label.control-label(for='template-job-prefix-input')
-                      | Template job Prefix:
+                      | Template Job Prefix:
                     input#template-job-prefix-input.form-control.input-lg(type='text', placeholder='ejj_template', ng-model='templateJobPrefix')
                   .form-group.form-group-lg#new-job-prefix
                     label.control-label(for='new-job-prefix-input')
-                      | Template job Prefix:
+                      | New Job Prefix:
                     input#new-job-prefix-input.form-control.input-lg(type='text', placeholder='new-job', ng-model='newJobPrefix')
                   .form-group.form-group-lg#base-jenkins-url
                     label.control-label(for='base-jenkins-url-input')
-                      | Template job Prefix:
+                      | Base Jenkins Url:
                     input#base-jenkins-url-input.form-control.input-lg(type='text', placeholder='http://some-jenkins-server.com:8080/', ng-model='baseJenkinsUrl')
                 .modal-footer
                   button.btn.btn-primary.btn-lg.btn-block.btn-middle(type='button', ng-click='createJobs()') Make my jobs!
