@@ -1,27 +1,22 @@
 extends ./base.jade
 
 block content
-  .container(ng-controller='main-controller')
+  .container(ng-controller='main-controller', style='margin-top:50px;')
     .row
-      .col-md-4
-        .modal
-          .modal-dialog
-            .modal-content
-              .modal-header
-                h3 Easy Jenkins Jobs
-              .form#main-form.form
-                .modal-body
-                  .form-group.form-group-lg#template-job-prefix
-                    label.control-label(for='template-job-prefix-input')
-                      | Template Job Prefix:
-                    input#template-job-prefix-input.form-control.input-lg(type='text', placeholder='ejj_template', ng-model='templateJobPrefix')
-                  .form-group.form-group-lg#new-job-prefix
-                    label.control-label(for='new-job-prefix-input')
-                      | New Job Prefix:
-                    input#new-job-prefix-input.form-control.input-lg(type='text', placeholder='new-job', ng-model='newJobPrefix')
-                  .form-group.form-group-lg#base-jenkins-url
-                    label.control-label(for='base-jenkins-url-input')
-                      | Base Jenkins Url:
-                    input#base-jenkins-url-input.form-control.input-lg(type='text', placeholder='http://some-jenkins-server.com:8080/', ng-model='baseJenkinsUrl')
-                .modal-footer
-                  button.btn.btn-primary.btn-lg.btn-block.btn-middle(type='button', ng-click='createJobs()') Make my jobs!
+      .well.bs-component.col-md-offset-4.col-md-4
+        form.form-horizontal#main-form
+          fieldset
+            h3.text-center Easy Jenkins Jobs
+            .form-group#template-job-prefix
+              label.control-label(for='template-job-prefix-input')
+                | Template Job Prefix:
+              input#template-job-prefix-input.form-control(type='text', placeholder='ejj_template', ng-model='templateJobPrefix')
+            .form-group#new-job-prefix
+              label.control-label(for='new-job-prefix-input')
+                | New Job Prefix:
+              input#new-job-prefix-input.form-control(type='text', placeholder='new-job', ng-model='newJobPrefix')
+            .form-group#base-jenkins-url
+              label.control-label(for='base-jenkins-url-input')
+                | Base Jenkins Url:
+              input#base-jenkins-url-input.form-control(type='text', placeholder='http://some-jenkins-server.com:8080/', ng-model='baseJenkinsUrl')
+            button.btn.btn-primary.btn-lg.btn-block.btn-middle(type='button', ng-click='createJobs()') Make my jobs!

@@ -3,12 +3,22 @@ html(ng-app='easy-jenkins-jobs')
     title EJJ - Client
     //- link(rel='shortcut icon', href='/favicon.ico')
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/material.min.css')
+    link(rel='stylesheet', href='/css/ripples.min.css')
     link(rel='stylesheet', href='/css/main.css')
     block head
   body
     block content
     //- external libraries
+    script(type='text/javascript', src='//code.jquery.com/jquery-1.10.2.min.js')
+    script(type='text/javascript', src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/material.min.js')
+    script(type='text/javascript', src='/js/ripples.min.js')
+    script(type='text/javascript').
+      $(document).ready(function() {
+          $.material.init();
+      });
     script(type='text/javascript', src='/js/bower.js')
     //- custom scripts
     script(type='text/javascript', src='/js/main.js')

@@ -11,6 +11,7 @@ module.exports = (grunt) ->
   imgBuildDir = path.join(clientBuildDir, 'img')
   jsBuildDir = path.join(clientBuildDir, 'js')
   cssBuildDir = path.join(clientBuildDir, 'css')
+  fontsBuildDir = path.join(clientBuildDir, 'fonts')
   viewsBuildDir = path.join(clientBuildDir, 'views')
   mainJsBuildPath = path.join(jsBuildDir, 'main.js')
   configJsBuildPath = path.join(jsBuildDir, 'config.js')
@@ -18,6 +19,7 @@ module.exports = (grunt) ->
   controllersJsBuildPath = path.join(jsBuildDir, 'controllers.js')
   servicesJsBuildPath = path.join(jsBuildDir, 'services.js')
   bowerJsBuildPath = path.join(jsBuildDir, 'bower.js')
+  bowerCssBuildPath = path.join(cssBuildDir, 'bower.css')
 
   grunt.initConfig
     globalConfig: globalConfig
@@ -51,6 +53,8 @@ module.exports = (grunt) ->
           # copy all CSS files
           # we are not currently publishing the icon fonts
           {expand: true, flatten: true, src: ['<%= globalConfig.src %>/stylesheets/**/*.css'], dest: cssBuildDir}
+          {expand: true, flatten: true, src: ['<%= globalConfig.src %>/scripts/*.js'], dest: jsBuildDir}
+          {expand: true, flatten: true, src: ['<%= globalConfig.src %>/fonts/*'], dest: fontsBuildDir}
         ]
     jade:
       options:
@@ -63,6 +67,7 @@ module.exports = (grunt) ->
     bower_concat:
       all:
         dest: bowerJsBuildPath
+        cssDest: bowerCssBuildPath
         dependencies:
           'angular': ['jquery'] # we can fake this dependency to make sure it loads jquery BEFORE angular
           'angular-animate': ['angular']
@@ -70,8 +75,6 @@ module.exports = (grunt) ->
           'angular-bootstrap': ['angular']
           'angular-ui-select2': ['angular', 'select2', 'jquery']
           'angular-ui-calendar': ['angular', 'jquery', 'fullcalendar']
-          'bootstrap': ['jquery']
-          'jquery': []
           'lodash': []
           'chartjs': []
           'jquery-ui': ['jquery']
