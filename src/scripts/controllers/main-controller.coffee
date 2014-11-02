@@ -35,7 +35,7 @@ EJJ.controller 'main-controller', [
           }
         .error (data, status, headers, config) ->
           $.bootstrapGrowl 'My Master, I could not get your jobs created...I\'m sorry.', {
-            type: 'error'
+            type: 'danger'
             align: 'center'
             width: 'auto'
             allow_dismiss: true
